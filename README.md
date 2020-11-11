@@ -115,14 +115,16 @@ $ cp /opt/ModSecurity/modsecurity.conf-recommended /etc/nginx/modsec/modsecurity
 $ cp /opt/ModSecurity/unicode.mapping /etc/nginx/modsec
 ```
 
-Download ModSecurity Core Rule dari repository GitHub. Rename filenya, lalu edit **/etc/nginx/secmod/modsecurity.conf**
-
-Tambahkan baris berikut di akhir file:
+Download ModSecurity Core Rule dari repository GitHub. Rename filenya.
 
 ```shell
 $ git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git /etc/nginx/modsec/owasp-crs
 $ mv /etc/nginx/modsec/owasp-crs/crs-setup.conf.example /etc/nginx/modsec/owasp-crs/crs-setup.conf
-$ nano /etc/nginx/modsec/modsecurity.conf
+```
+
+Lalu edit **/etc/nginx/secmod/modsecurity.conf**. Edit line **SecRuleEngine** dan tambahkan baris berikut di akhir file:
+
+```shell
   .........
   SecRuleEngine On
   .................
